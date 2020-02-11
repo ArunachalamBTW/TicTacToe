@@ -12,7 +12,7 @@ class BoardTest {
 
         Board board = new Board(gesture);
 
-        assertEquals("Matches Col 1", board.findMatching());
+        assertEquals(Gesture.X, board.findMatching());
     }
 
     @Test
@@ -24,7 +24,7 @@ class BoardTest {
 
         Board board = new Board(gesture);
 
-        assertEquals("Matches Row 2", board.findMatching());
+        assertEquals(Gesture.O, board.findMatching());
     }
 
     @Test
@@ -36,6 +36,6 @@ class BoardTest {
 
         Board board = new Board(gesture);
 
-        assertEquals("No Match", board.findMatching());
+        assertEquals(null, board.findMatching());
     }
 }
