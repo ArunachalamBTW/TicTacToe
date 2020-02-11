@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="BoardTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-02-11T09:31:07" hostname="In-Arunachalamb.local" time="0.025">
+  <properties/>
+  <testcase name="shouldReturnNoMatchIfNoMatchIsFound()" classname="BoardTest" time="0.022"/>
+  <testcase name="shouldMatchSecondRow()" classname="BoardTest" time="0.001"/>
+  <testcase name="shouldMatchFirstColumn()" classname="BoardTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
