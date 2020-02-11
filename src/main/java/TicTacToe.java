@@ -8,17 +8,31 @@ public class TicTacToe {
 
     private Map<Gesture, Player> playerGestureMap = new HashMap<>();
 
-    public TicTacToe(Board board, Player player1, Player player2) {
+    public TicTacToe(Board board) {
         this.board = board;
-        this.player1 = player1;
-        this.player2 = player2;
     }
 
-//    public Player createPlayer1() {
-//        Gesture player1Gesture = Gesture.X;
-//        Player player = new Player(player1Gesture, PlayerStatus.MY_TURN);
-//        playerGestureMap.put(Gesture.X, player);
-//        return player;
-//    }
+    public Player createPlayer1() {
+        Gesture player1Gesture = Gesture.X;
+        player1 = new Player(player1Gesture, PlayerStatus.MY_TURN, "Player 1");
+        playerGestureMap.put(player1Gesture, player1);
+        return player1;
+    }
+
+    public Player createPlayer2() {
+        Gesture player2Gesture = Gesture.O;
+        player2 = new Player(player2Gesture, PlayerStatus.NOT_MY_TURN, "Player 2");
+        playerGestureMap.put(player2Gesture, player2);
+        return player2;
+    }
+
+    public String findWinner() {
+        Gesture winnerGesture = board.findMatching();
+        if (winnerGesture == null) {
+            return "No Winner";
+        }
+        Player winningPlayer = playerGestureMap.get(winnerGesture);
+        return winningPlayer +" is Winner";
+    }
 
 }

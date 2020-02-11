@@ -11,6 +11,11 @@ public class Board {
         gameMode = GameMode.ONGOING;
     }
 
+    public Board() {
+        this.gesture = new Gesture[MAX_ROW][MAX_COL];
+        gameMode = GameMode.ONGOING;
+    }
+
     public Gesture findMatching() {
         return findSimilaritiesInRow();
     }
@@ -64,7 +69,7 @@ public class Board {
     public void add(int coOrdinate1, int coOrdinate2, Gesture playerGesture) {
         if (gameMode.equals(GameMode.ONGOING)) {
             gesture[coOrdinate1][coOrdinate2] = playerGesture;
-            if (!findMatching().equals("No Match")) {
+            if (findMatching() == null) {
                 gameMode = gameMode.toggleGameMode();
             }
         }
